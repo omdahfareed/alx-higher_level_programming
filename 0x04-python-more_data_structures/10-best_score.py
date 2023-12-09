@@ -1,7 +1,18 @@
 #!/usr/bin/python3
+
+"""
+    /** best_score - returns a key with the biggest integer value
+      * @a_dictionary: dictionary
+      *
+      * Return: string or None
+      */
+"""
+
+
 def best_score(a_dictionary):
+    key = None
     if a_dictionary:
-        max_value = max(a_dictionary, key=a_dictionary.get)
-    else:
-        max_value = None
-    return(max_value)
+        for idx, item in a_dictionary.items():
+            if item > a_dictionary.get(key, 0):
+                key = idx
+    return (key)
